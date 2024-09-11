@@ -1,0 +1,10 @@
+#cloud-config
+users:
+- name: root
+  lock-passwd: false
+  # use mkpassword the password is 123r00t
+  passwd: $6$rounds=4096$CV8HccWCOXWP88Lw$vajAl9KaBnCXDj5ivSdAd9uhYdJD9K8D8zUeuN8FSLmhbx9lFQi2eGTIa.N7orYNEqfNpymJG4vusqabfUoLu0
+- name: admin
+  lock-passwd: false
+  passwd: $6$rounds=4096$mr4388PXlNAhk7xp$piCe6VHnUZjtX5pWd1hjAFGAeiS1KKwa/v4EScP9EWIEWECL726KWAnrR/bqiubQVNxlQZbS/51i7aCZM8DVJ1
+  sudo: ["ALL=(ALL) NOPASSWD:ALL"]

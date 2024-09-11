@@ -1,0 +1,12 @@
+#cloud-config
+merge_how:
+ - name: list
+   settings: [append]
+ - name: dict
+   settings: [no_replace, recurse_list]
+runcmd:
+  - echo
+  - echo "*** Allowing Password SSH"
+  - sed -i 's/^PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config
+  - echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
+  - systemctl reload sshd
